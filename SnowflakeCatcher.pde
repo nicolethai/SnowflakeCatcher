@@ -1,5 +1,5 @@
 // snowflakes array
-int NUM_FLAKES = 100;
+public final static int NUM_FLAKES = 100;
 Snowflake[] flakes = new Snowflake[NUM_FLAKES];
 
 int WIDTH_HEIGHT = 500;
@@ -25,6 +25,9 @@ void draw()
     flakes[i].wrap();
     flakes[i].show();
   }
+  //floor
+  fill(255);
+  rect(0, 500-10, 500, 10);
 }
 void mouseDragged()
 {
@@ -49,14 +52,15 @@ class Snowflake
   void show()
   {
     //your code here
-    noFill();
+    // noFill();
+    fill(255);
     stroke((int)(Math.random()*255));
     ellipse(snowX, snowY, 10, 10);
   }
   void lookDown()
   {
     //your code here
-    if ((snowY > 0 && snowY < WIDTH_HEIGHT))
+    if ((snowY > 0) && (snowY < WIDTH_HEIGHT))
     {
       if (get(snowX, snowY+1) != color(0))
         isMoving = false;
