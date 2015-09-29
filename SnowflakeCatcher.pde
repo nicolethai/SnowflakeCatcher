@@ -2,7 +2,7 @@
 public final static int NUM_FLAKES = 100;
 Snowflake[] flakes = new Snowflake[NUM_FLAKES];
 
-int WIDTH_HEIGHT = 500;
+public final static int WIDTH_HEIGHT = 500;
 
 void setup()
 {
@@ -26,15 +26,22 @@ void draw()
     flakes[i].show();
   }
   //floor
-  fill(255);
-  rect(0, 500-10, 500, 10);
+  // fill(88, 59, 42);
+  // rect(0, 500-10, 500, 10);
+
 }
-void mouseDragged()
+void mouseMoved()
 {
   //your code here
-  noStroke();
-  fill(255, 255, 0);
-  rect(mouseX, mouseY, 10, 10);
+  // noStroke();
+  // fill(255, 255, 0);
+  // rect(mouseX, mouseY, 10, 10);
+  background(0);
+  strokeWeight(0.5);
+  // stroke(0, 0, 255);
+  fill(255);
+  ellipse(mouseX, mouseY-50, 50, 50);
+  ellipse(mouseX, mouseY-90, 35, 35);
 }
 
 class Snowflake
@@ -52,9 +59,10 @@ class Snowflake
   void show()
   {
     //your code here
-    // noFill();
+    noFill();
     fill(255);
-    stroke((int)(Math.random()*255));
+    // stroke((int)(Math.random()*255));
+    // stroke(255);
     ellipse(snowX, snowY, 10, 10);
   }
   void lookDown()
@@ -62,7 +70,7 @@ class Snowflake
     //your code here
     if ((snowY > 0) && (snowY < WIDTH_HEIGHT))
     {
-      if (get(snowX, snowY+1) != color(0))
+      if ( (get(snowX, snowY+7) != color(0)) )
         isMoving = false;
       else
         isMoving = true;
@@ -84,7 +92,7 @@ class Snowflake
   void wrap()
   {
     //your code here
-    if (snowY > WIDTH_HEIGHT-2)
+    if (snowY > WIDTH_HEIGHT-10)
     {
       snowY = 0;
       snowX = (int)(Math.random()*(WIDTH_HEIGHT+1));
