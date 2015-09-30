@@ -29,6 +29,12 @@ void draw()
   // fill(88, 59, 42);
   // rect(0, 500-10, 500, 10);
 
+  strokeWeight(0.5);
+  // stroke(0, 0, 255);
+  fill(255);
+  ellipse(WIDTH_HEIGHT-50, WIDTH_HEIGHT-50, 50, 50);
+  ellipse(WIDTH_HEIGHT-50, WIDTH_HEIGHT-90, 35, 35);
+
 }
 void mouseMoved()
 {
@@ -36,12 +42,7 @@ void mouseMoved()
   // noStroke();
   // fill(255, 255, 0);
   // rect(mouseX, mouseY, 10, 10);
-  background(0);
-  strokeWeight(0.5);
-  // stroke(0, 0, 255);
-  fill(255);
-  ellipse(mouseX, mouseY-50, 50, 50);
-  ellipse(mouseX, mouseY-90, 35, 35);
+
 }
 
 class Snowflake
@@ -49,6 +50,24 @@ class Snowflake
   //class member variable declarations
   int snowX, snowY;
   boolean isMoving;
+  /*int randBGW = (int)(Math.random()*5);
+  int bgw;
+  if (randBGW == 0)
+   { bgw = 0;
+   }
+  else if (randBGW == 1)
+    {bgw = 115;
+    }
+  else if (randBGW == 2)
+    {bgw = 150;
+    }
+  else if (randBGW == 3)
+    {bgw = 175;
+    }
+  else 
+    {bgw = 225;
+    }
+*/
   Snowflake()
   {
     //class member variable initializations
@@ -60,8 +79,8 @@ class Snowflake
   {
     //your code here
     noFill();
-    fill(255);
-    // stroke((int)(Math.random()*255));
+    // fill(255);
+    stroke((int)(Math.random()*255));
     // stroke(255);
     ellipse(snowX, snowY, 10, 10);
   }
@@ -70,7 +89,7 @@ class Snowflake
     //your code here
     if ((snowY > 0) && (snowY < WIDTH_HEIGHT))
     {
-      if ( (get(snowX, snowY+7) != color(0)) )
+      if ( (get(snowX, snowY+7) != color((int)(Math.random()*255))))
         isMoving = false;
       else
         isMoving = true;
