@@ -1,6 +1,7 @@
 // snowflakes array
 public final static int NUM_FLAKES = 100;
 Snowflake[] flakes = new Snowflake[NUM_FLAKES];
+Snowflake[] moreFlakes = new Snowflake[NUM_FLAKES];
 
 public final static int WIDTH_HEIGHT = 500;
 
@@ -13,6 +14,10 @@ void setup()
   {
     flakes[i] = new Snowflake();
   }
+  for (int i = 0; i < moreFlakes.length; i++)
+  {
+    moreFlakes[i] = new Snowflake();
+  }
 }
 void draw()
 {
@@ -24,6 +29,18 @@ void draw()
     flakes[i].move();
     flakes[i].wrap();
     flakes[i].show();
+  }
+
+  for (int i = 0; i < flakes.length; i++)
+  {
+    if (flakes[i].isMoving == false)
+    {
+      moreFlakes[i].erase();
+      moreFlakes[i].lookDown();
+      moreFlakes[i].move();
+      moreFlakes[i].wrap();
+      moreFlakes[i].show();
+    }
   }
   //floor
   // fill(88, 59, 42);
