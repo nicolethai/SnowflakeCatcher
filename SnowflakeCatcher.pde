@@ -29,19 +29,19 @@ void draw()
   // fill(88, 59, 42);
   // rect(0, 500-10, 500, 10);
 
-  strokeWeight(0.5);
-  // stroke(0, 0, 255);
-  fill(255);
-  ellipse(WIDTH_HEIGHT-50, WIDTH_HEIGHT-50, 50, 50);
-  ellipse(WIDTH_HEIGHT-50, WIDTH_HEIGHT-90, 35, 35);
+  // strokeWeight(0.5);
+  // // stroke(0, 0, 255);
+  // fill(255);
+  // ellipse(WIDTH_HEIGHT-50, WIDTH_HEIGHT-50, 50, 50);
+  // ellipse(WIDTH_HEIGHT-50, WIDTH_HEIGHT-90, 35, 35);
 
 }
 void mouseMoved()
 {
   //your code here
-  // noStroke();
-  // fill(255, 255, 0);
-  // rect(mouseX, mouseY, 10, 10);
+  noStroke();
+  fill(255, 255, 0);
+  rect(mouseX, mouseY, 10, 10);
 
 }
 
@@ -89,7 +89,7 @@ class Snowflake
     //your code here
     if ((snowY > 0) && (snowY < WIDTH_HEIGHT))
     {
-      if ( (get(snowX, snowY+7) != color((int)(Math.random()*255))))
+      if ( (get(snowX, snowY+7) != color(0)) )
         isMoving = false;
       else
         isMoving = true;
