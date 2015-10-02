@@ -8,7 +8,7 @@ public final static int WIDTH_HEIGHT = 500;
 void setup()
 {
   //your code here
-  background(37, 52, 77);
+  background(0);
   size(WIDTH_HEIGHT, WIDTH_HEIGHT);
   for (int i = 0; i < flakes.length; i++)
   {
@@ -70,7 +70,7 @@ class Snowflake
   {
     //your code here
     noFill();
-    stroke((int)(Math.random()*255));
+    stroke((int)(Math.random()*255)+1);
     ellipse(snowX, snowY, 10, 10);
   }
   void lookDown()
@@ -78,7 +78,7 @@ class Snowflake
     //your code here
     if ((snowY > 0) && (snowY < WIDTH_HEIGHT))
     {
-      if ( (get(snowX, snowY+7) != color(37, 52, 77)) )
+      if ( (get(snowX, snowY+7) != color(0)) )
         isMoving = false;
       else
         isMoving = true;
@@ -87,8 +87,8 @@ class Snowflake
   void erase()
   {
     //your code here
-    fill(37, 52, 77);
-    stroke(37, 52, 77);
+    fill(0);
+    stroke(0);
     ellipse(snowX, snowY, 12, 12);
   }
   void move()
