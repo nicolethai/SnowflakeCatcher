@@ -10,6 +10,7 @@ void setup()
   //your code here
   background(0);
   size(WIDTH_HEIGHT, WIDTH_HEIGHT);
+  frameRate(100);
   for (int i = 0; i < flakes.length; i++)
   {
     flakes[i] = new Snowflake();
