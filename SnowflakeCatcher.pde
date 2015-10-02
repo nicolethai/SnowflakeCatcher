@@ -10,7 +10,7 @@ void setup()
   //your code here
   background(0);
   size(WIDTH_HEIGHT, WIDTH_HEIGHT);
-  frameRate(100);
+  frameRate(1000);
   for (int i = 0; i < flakes.length; i++)
   {
     flakes[i] = new Snowflake();
@@ -52,6 +52,10 @@ void mouseMoved()
   fill(0, 255, 104); // 0, 255, 210
   ellipse(mouseX, mouseY, 7, 7);
 
+}
+void mouseClicked()
+{
+  setup();
 }
 
 class Snowflake
