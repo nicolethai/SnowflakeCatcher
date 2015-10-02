@@ -48,7 +48,7 @@ void mouseMoved()
 {
   //your code here
   noStroke();
-  fill(0, 255, 210);
+  fill(0, 255, 104); // 0, 255, 210
   ellipse(mouseX, mouseY, 7, 7);
 
 }
@@ -70,7 +70,7 @@ class Snowflake
   {
     //your code here
     noFill();
-    stroke((int)(Math.random()*255)+1);
+    stroke(0, ((int)(Math.random()*255)+1), ((int)(Math.random()*255)+1));
     ellipse(snowX, snowY, 10, 10);
   }
   void lookDown()
