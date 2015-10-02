@@ -49,7 +49,7 @@ void mouseMoved()
   //your code here
   noStroke();
   fill(255, 255, 0);
-  rect(mouseX, mouseY, 10, 10);
+  ellipse(mouseX, mouseY, 7, 7);
 
 }
 
