@@ -4,6 +4,7 @@ Snowflake[] flakes = new Snowflake[NUM_FLAKES];
 Snowflake[] moreFlakes = new Snowflake[NUM_FLAKES];
 
 public final static int WIDTH_HEIGHT = 500;
+int randTheme = 0;
 
 void setup()
 {
@@ -49,12 +50,24 @@ void mouseMoved()
 {
   //your code here
   noStroke();
-  fill(0, 255, 104); // 0, 255, 210
+  if (randTheme == 0)
+  {
+    fill(0, 255, 104); // 0, 255, 210
+  }
+  else if (randTheme == 1)
+  {
+    fill(255, 196, 0);
+  }
+  else
+  {
+    fill(255, 0, 136);  
+  }
   rect(mouseX, mouseY, 10, 5);
 
 }
 void mouseClicked()
 {
+  randTheme = (int)(Math.random()*3);
   setup();
 }
 
@@ -75,7 +88,18 @@ class Snowflake
   {
     //your code here
     noFill();
-    stroke(0, ((int)(Math.random()*255)+1), ((int)(Math.random()*255)+1));
+    if (randTheme == 0)
+    {
+      stroke(0, ((int)(Math.random()*255)+1), ((int)(Math.random()*255)+1));
+    }
+    else if (randTheme == 1)
+    {
+      stroke(((int)(Math.random()*255)+1), ((int)(Math.random()*255)+1), 0);
+    }
+    else 
+    {
+      stroke(((int)(Math.random()*255)+1), 0, ((int)(Math.random()*255)+1));
+    }
     ellipse(snowX, snowY, 10, 10);
   }
   void lookDown()
